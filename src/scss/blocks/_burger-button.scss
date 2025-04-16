@@ -1,0 +1,18 @@
+@use '../mixins';
+@use '../variables/colors';
+
+.burger-button {
+	@include mixins.reset-button;
+	width: 54px;
+	height: 48px;
+	position: relative;
+	right: 12px;
+
+	&::after {
+		@include mixins.abs-center;
+		content: url('/assets/icons/button_burger.svg');
+		width: 50%;
+		height: 50%;
+		translate: -50% -50%;
+	}
+}

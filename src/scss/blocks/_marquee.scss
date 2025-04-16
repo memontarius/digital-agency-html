@@ -1,0 +1,58 @@
+
+.marquee {
+	display: flex;
+	width: 100%;
+  align-items: center;
+  overflow: hidden;
+  box-sizing: border-box;
+	padding-left: 0;
+	padding-right: 0;
+	padding-inline: 0;
+	--textWidth: auto;
+	--animSpeed: 70;
+	
+	mask-image: linear-gradient(
+    to right,
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 1) 10%,
+    hsl(0 0% 0% / 1) 90%,
+    hsl(0 0% 0% / 0)
+  );
+
+	&__content {
+		display: flex;
+		column-gap: 10px;
+		flex-shrink: 0;
+		flex-direction: row;
+		align-items: center;
+		animation: marquee-scroll calc( (var(--textWidth) * 5s) / var(--animSpeed) ) linear infinite;
+		
+	}
+
+	&__content--reversed {
+		animation-direction: reverse;
+	}
+
+	&__item {
+    display: block;
+		flex-shrink: 0;
+		flex-grow: 0;
+		transition: transform 40s linear;
+	}
+
+	&__copies{
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+		column-gap: 10px;
+		height: 100%;
+		width: 0;
+		flex-grow: 0;
+		flex-shrink: 0;
+	}
+}
+
+@keyframes marquee-scroll{
+	0%   { transform: translateX(0)}
+	100% { transform: translateX(-100%)}
+}

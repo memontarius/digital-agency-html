@@ -1,0 +1,82 @@
+@use 'variables/base';
+@use 'media';
+
+.container {
+	box-sizing: border-box;
+	max-width: base.$container-width;
+	margin-inline: auto;
+	padding-inline: base.$container-padding-x;
+	
+	@include media.table {
+		padding-inline: base.$container-padding-x-md;
+	}
+
+	@include media.mobile {
+		padding-inline: base.$container-padding-x-sm;
+	}
+
+	&--unpadding-x {
+		padding-inline: 0;
+	}
+}
+
+.container-fluid {
+	max-width: 100%;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  border: 0 !important;
+  padding: 0 !important;
+  white-space: nowrap !important;
+  clip-path: inset(100%) !important;
+  clip: rect(0 0 0 0) !important;
+  overflow: hidden !important;
+}
+
+.hidden-desktop {
+	@include media.desktop {
+		display: none !important;
+	} 
+}
+
+.visible-desktop {
+	@include media.desktop-above {
+		display: none !important;
+	}
+}
+
+.hidden-mobile {
+	@include media.mobile {
+		display: none !important;
+	} 
+}
+
+.visible-mobile {
+	@include media.mobile-above {
+		display: none !important;
+	}
+}
+
+.hidden-table {
+	@include media.table {
+		display: none !important;
+	} 
+}
+
+.visible-table {
+	@include media.table-above {
+		display: none !important;
+	}
+}
+
+.overflow-x-hidden {
+	overflow-x: hidden;
+}
+
+.overflow-y-hidden {
+	overflow-y: hidden;
+}

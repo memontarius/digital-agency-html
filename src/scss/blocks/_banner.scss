@@ -1,0 +1,73 @@
+@use '../media';
+
+.banner {
+	padding-top: 30px;
+
+	&__body {
+		display: flex;
+		column-gap: 50px;
+		background-image: url('/assets/images/bg-banner.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		border-radius: 16px;
+		padding-block: 90px;
+		padding-inline: 70px;
+
+		@include media.table {
+			flex-direction: column;
+			row-gap: 24px;
+			background-image: none;
+			padding-block: 0;
+			padding-inline: 0;
+		}
+	}
+
+	&__button {
+		max-width: 530px;
+
+		@include media.table {
+			max-width: 100%;
+		}
+	}
+
+	&__content {
+		flex: 5;
+		
+		@include media.table {
+			order: 2;
+			background-image: url('/assets/images/bg-banner-small.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 16px;
+			padding: 40px 24px 40px 24px;
+			row-gap: 24px;
+		}
+	}
+
+	&__preview-container {
+		display: flex;
+		justify-content: center;
+		align-items: center; 
+		flex: 5;
+
+		@include media.table {
+			background-image: url('/assets/images/bg-banner-small.svg');
+			background-repeat: no-repeat;
+			background-size: cover;
+			border-radius: 16px;
+			padding: 0;
+		}
+	}
+
+	&__preview {
+		max-width: 100%;
+  	height: auto;
+
+		@include media.table {
+			position: relative;
+			height: 100%;
+			width: auto;
+			top: -5px;
+		}
+	}
+}

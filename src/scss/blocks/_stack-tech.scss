@@ -1,0 +1,45 @@
+@use '../media';
+
+
+.stack-tech {
+	&__body > div:first-child {
+		margin-bottom: 20px;
+
+		@include media.mobile {
+			margin-bottom: 8px;
+		}
+	}
+	
+	&__list {
+		column-gap: 20px;
+
+		@include media.mobile {
+			column-gap: 8px;
+		}
+	}
+
+	& .section__header  {
+		column-gap: 5%;
+
+		@include media.mobile {
+			flex-direction: column;
+			row-gap: 32px;
+		}
+	}
+
+	& .section__title {
+		flex: 7;
+
+		@include media.mobile {
+			width: 100%;
+		}
+	}
+
+	& .section__subtitle {
+		flex: 8;
+
+		@include media.mobile {
+			width: 100%;
+		}
+	}
+}

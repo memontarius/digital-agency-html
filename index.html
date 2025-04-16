@@ -1,13 +1,704 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Digital Agency</title>
-  </head>
-  <body>
-    <div id="app">
+
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport"
+				content="width=device-width, initial-scale=1.0" />
+	<title>Digital Agency</title>
+</head>
+
+<body>
+	<header class="header">
+		<div class="header__inner container">
+			<nav class="header__menu hidden-mobile">
+				<ul class="header__menu-list">
+					<li class="header__menu-item">
+						<a href="/"
+							 class="header__menu-link">
+							О продукте
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="/"
+							 class="header__menu-link">
+							Услуги
+						</a>
+					</li>
+					<li class="header__menu-item">
+						<a href="/"
+							 class="header__menu-link">
+							Статьи
+						</a>
+					</li>
+				</ul>
+			</nav>
+			<button class="header__burger-button burger-button visible-mobile"
+							type="button"
+							onclick="mobileOverlay.showModal()">
+				<span class="visually-hidden">Открыть навигационное меню</span>
+			</button>
+			<button class="header__button button"
+							type="button">
+				Связаться
+			</button>
 		</div>
-    <script type="module" src="/src/js/main.js"></script>
-  </body>
+	</header>
+
+	<main class="content">
+		<section class="section section--unpadding-y container">
+			<div class="section__body section__body--lighten section__body--overflow-hidden">
+				<div class="intro">
+					<div class="intro__item">
+						<img class="intro__img-left"
+								 src="/assets/images/i-phone.png"
+								 alt="iPhone"
+								 width="500"
+								 height="1022"
+								 loading="lazy"
+								 aria-hidden="true">
+					</div>
+					<div class="intro__item intro__body">
+						<h1 class="intro__title">Digital Agency</h1>
+						<h2 class="intro__subtitle visible-table">От идеи к разработке</h2>
+						<p class="intro__description visible-table">Где встречаются инновации, воображение и изобретательность</p>
+					</div>
+					<div class="intro__item hidden-table">
+						<img class="intro__img-right"
+								 src="/assets/images/mac-book.png"
+								 width="1100"
+								 height="735"
+								 alt="MacBook"
+								 loading="lazy"
+								 aria-hidden="true">
+					</div>
+				</div>
+			</div>
+			</div>
+		</section>
+		<section class="section service-support container marquee">
+			<h2 class="visually-hidden">Зачади которые мы решаем</h2>
+			<ul class="service-support__list marquee__content">
+				<li class="service-support__item marquee__item">
+					Идея
+				</li>
+				<li class="service-support__item marquee__item">
+					Найдём клиентов
+				</li>
+				<li class="service-support__item marquee__item">
+					Бренд-дизайн
+				</li>
+				<li class="service-support__item marquee__item">
+					Разработка
+				</li>
+				<div class="service-support__list marquee__copies"
+						 aria-hidden="true"></div>
+			</ul>
+		</section>
+		<section class="section section--background-backlight container">
+			<header class="section__header">
+				<h2 class="section__title">
+					<span class="hidden-mobile">От идеи к разработке</span>
+					<span class="visible-mobile">Услуги</span>
+				</h2>
+				<p class="section__subtitle hidden-mobile">
+					Где встречаются инновации, воображение и изобретательность
+				</p>
+			</header>
+			<div class="section__body position-slider">
+				<div class="services">
+					<ul class="services__list position-slider__list">
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">01</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Корпоративный сайт
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-1.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-1.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-1.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Официальный сайт компании с подробной информацией и услугами
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">02</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Лендинг
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-2.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-2.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-2.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Одностраничный сайт для привлечения клиентов и сбора заявок
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">03</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Сайт-визитка
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-3.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-3.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-3.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Компактный сайт с основной информацией о компании и контактах
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">04</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Промо-сайт
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-4.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-4.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-4.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Сайт для продвижения конкретного продукта или акции
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">05</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Инфо-портал
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-5.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-5.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-5.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Сайт с большим количеством информационного контента
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+						<li class="services__item item-by-sliding">
+							<article class="service-card">
+								<div class="service-card__counter">06</div>
+								<div class="service-card__body">
+									<h4 class="service-card__title">
+										Интернет-магазин
+									</h4>
+									<div class="service-card__content">
+										<div class="service-card__preview">
+											<div class="embla">
+												<div class="embla__container">
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-6.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-6.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+													<div class="embla__slide">
+														<img src="/assets/images/service-preview-6.png"
+																 alt="Сайт компании"
+																 class="service-card__preview">
+													</div>
+												</div>
+												<div class="embla__controls">
+													<div class="embla__dots"></div>
+												</div>
+											</div>
+										</div>
+										<div class="service-card__info">
+											<p class="service-card__description">
+												Онлайн-платформа для продажи товаров и услуг
+											</p>
+											<button class="service-card__action-button button button--md hidden-table"
+															type="button">
+												Заказать
+											</button>
+										</div>
+										<button class="service-card__action-button button visible-table"
+														type="button">
+											Заказать
+										</button>
+									</div>
+								</div>
+							</article>
+						</li>
+					</ul>
+				</div>
+				<div class="position-slider__runner-wrapper">
+					<div class="position-slider__runner"></div>
+				</div>
+			</div>
+		</section>
+
+		<section class="section stack-tech">
+			<header class="section__header container">
+				<h2 class="section__title">
+					Стек технологий
+				</h2>
+				<span class="section__subtitle">
+					Используйте передовые технологии для создания интуитивно привлекательных интерфейсов
+				</span>
+			</header>
+			<div class="section__body stack-tech__body container container--unpadding-x">
+				<div class="stack-tech__list marquee">
+					<ul class="stack-tech__list marquee__content">
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/figma.svg"
+											 alt="figma">
+								</div>
+								<span class="stack-block__title">Figma</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/js.svg"
+											 alt="JavaScript">
+								</div>
+								<span class="stack-block__title">JavaScript</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/react.svg"
+											 alt="React">
+								</div>
+								<span class="stack-block__title">React</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/webpack.svg"
+											 alt="WebPack">
+								</div>
+								<span class="stack-block__title">WebPack</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/less.svg"
+											 alt="Less">
+								</div>
+								<span class="stack-block__title">Less</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/ruby.svg"
+											 alt="Ruby">
+								</div>
+								<span class="stack-block__title">Ruby</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/ror.svg"
+											 alt="RoR">
+								</div>
+								<span class="stack-block__title">RoR</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/nginx.svg"
+											 alt="Nginx">
+								</div>
+								<span class="stack-block__title">Nginx</span>
+							</div>
+						</li>
+						<div class="marquee__copies stack-tech__list"
+								 aria-hidden="true"></div>
+					</ul>
+				</div>
+				<div class="stack-tech__list marquee">
+					<ul class="stack-tech__list marquee__content marquee__content--reversed">
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/php.svg"
+											 alt="php">
+								</div>
+								<span class="stack-block__title">PHP</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/laravel.svg"
+											 alt="Laravel">
+								</div>
+								<span class="stack-block__title">Laravel</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/node-js.svg"
+											 alt="NodeJS">
+								</div>
+								<span class="stack-block__title">NodeJS</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/git.svg"
+											 alt="Git">
+								</div>
+								<span class="stack-block__title">Git</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/redux.svg"
+											 alt="Redux">
+								</div>
+								<span class="stack-block__title">Redux</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/docker.svg"
+											 alt="Docker">
+								</div>
+								<span class="stack-block__title">Docker</span>
+							</div>
+						</li>
+						<li class="stack-tech__item marquee__item">
+							<div class="stack-block">
+								<div class="stack-block__icon-wrapper">
+									<img class="stack-block__icon"
+											 src="/assets/icons/postgre-sql.svg"
+											 alt="PostgreSQL">
+								</div>
+								<span class="stack-block__title">PostgreSQL</span>
+							</div>
+						</li>
+						<div class="marquee__copies stack-tech__list"
+								 aria-hidden="true"></div>
+					</ul>
+				</div>
+			</div>
+		</section>
+
+		<section class="section banner container">
+			<div class="section__body banner__body">
+				<div class="section__content banner__content">
+					<h2 class="section__title">Разработай сервис или приложение</h2>
+					<p class="section__description hidden-mobile">От концепции до реализации: полный цикл разработки, для создания
+						уникального
+						продукта</p>
+					<p class="section__description visible-mobile">Вместе с SMLabs</p>
+					<a href=""
+						 class="banner__button button button--lg">Подробнее</a>
+				</div>
+				<div class="banner__preview-container">
+					<img src="/assets/images/banner_preview.png"
+							 alt="Dashboard on devices"
+							 class="banner__preview">
+				</div>
+			</div>
+		</section>
+
+		<section class="section partnership-stages container">
+			<header class="section__header partnership-stages__header">
+				<h2 class="section__title">
+					Этапы реализации
+				</h2>
+			</header>
+			<div class="section__body partnership-stages__body position-slider">
+				<ul class="partnership-stages__list position-slider__list">
+					<il class="partnership-stages__item card">
+						<span class="card__number">01</span>
+						<h3 class="card__title">
+							Определяем видение проекта
+						</h3>
+						<p class="card__description">
+							Формируем четкие цели и направления работы
+						</p>
+					</il>
+					<il class="partnership-stages__item card">
+						<span class="card__number">02</span>
+						<h3 class="card__title">
+							Исследуем пользователей и конкурентов
+						</h3>
+						<p class="card__description">
+							Анализируем потребности аудитории и рыночную среду
+						</p>
+					</il>
+					<il class="partnership-stages__item card">
+						<span class="card__number">03</span>
+						<h3 class="card__title">
+							Проектируем<br/> и прототипируем
+						</h3>
+						<p class="card__description">
+							Создаем макеты и прототипы для визуализации идей
+						</p>
+					</il>
+					<il class="partnership-stages__item card">
+						<span class="card__number">04</span>
+						<h3 class="card__title">
+							Разрабатываем<br/> дизайн-концепцию
+						</h3>
+						<p class="card__description">
+							Формируем уникальный визуальный стиль проекта
+						</p>
+					</il>
+					<il class="partnership-stages__item card">
+						<span class="card__number">05</span>
+						<h3 class="card__title">
+							Запускаем<br/> и масштабируем
+						</h3>
+						<p class="card__description">
+							Вводим проект в эксплуатацию и обеспечиваем его рост и развитие
+						</p>
+					</il>
+				</ul>
+				<div class="position-slider__runner-wrapper">
+					<div class="position-slider__runner"></div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<dialog class="mobile-overlay visible-mobile"
+					id="mobileOverlay">
+		<form class="mobile-overlay__close-button-wrapper"
+					method="dialog">
+			<button class="moblie-overlay__close-button cross-button"
+							type="submin">
+				<span class="visually-hidden">Закрыть меню навигации</span>
+			</button>
+		</form>
+		<div class="mobile-overlay__body">
+			<ul class="mobile-overlay__list">
+				<li class="mobile-overlay__item">
+					<a href="/"
+						 class="mobile-overlay__link">
+						О продукте
+					</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a href="/"
+						 class="mobile-overlay__link">
+						Услуги
+					</a>
+				</li>
+				<li class="mobile-overlay__item">
+					<a href="/"
+						 class="mobile-overlay__link">
+						Статьи
+					</a>
+				</li>
+			</ul>
+		</div>
+	</dialog>
+	<script type="module"
+					src="/src/js/main.js"></script>
+</body>
+
 </html>

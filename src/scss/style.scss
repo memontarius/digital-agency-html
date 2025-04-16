@@ -1,14 +1,30 @@
-@use "normalize.css";
-@use "./variables";
+//@use 'normalize.css';
+@use 'normalize';
+@use 'variables/colors';
+@use 'variables/base';
+@use 'fonts';
+@use 'mixins';
+@use 'globals';
+@use 'utils';
+@use 'media';
 
-#app {
-	width: 100vw;
-	height: 100vh;
-	background-color: blueviolet;
+@use 'blocks/embla';
+@use 'blocks/marquee';
+@use 'blocks/position-slider';
 
-	.test {
-		width: 100px;
-		height: 100px;
-		background-color: variables.$color-accent;
-	}
-}
+@use 'blocks/button';
+@use 'blocks/burger-button';
+@use 'blocks/header';
+@use 'blocks/cross-button';
+@use 'blocks/mobile-overlay';
+@use 'blocks/stack-block';
+@use 'blocks/banner';
+@use 'blocks/card';
+@use 'blocks/service-card';
+
+@use 'blocks/section';
+@use 'blocks/intro';
+@use 'blocks/service-support';
+@use 'blocks/services';
+@use 'blocks/stack-tech';
+@use 'blocks/partnership-stages';

@@ -1,0 +1,68 @@
+@use '../variables/colors';
+@use '../variables/base';
+@use '../media';
+
+.header {
+	&__inner {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		column-gap: 50px;
+		height: 100px;
+
+		@include media.mobile {
+			height: 64px;
+		}
+	}
+
+	&__menu {
+		margin-left: 12%;
+		font-size: 20px;
+		
+		@include media.table {
+			margin-left: 0%;
+		}
+
+		&-list {
+			display: flex;
+			align-items: center;
+			column-gap: 40px;
+		}
+
+		&-link {
+			position: relative;
+			height: 48px;
+			display: inline-flex;
+			align-items: center;
+			line-height: 24px;
+			color: colors.$text-menu;
+
+			@include media.hover {
+				&:after {
+					width: 100%;
+				}
+			}
+
+			&::after {
+				content: '';
+				position: absolute;
+				top: 100%;
+				left: 50%;
+				translate: -50%;
+				width: 0;
+				height: 2px;
+				background-color: currentColor;
+				transition-duration: inherit;
+			}
+		}
+	}
+
+	&__button {
+		@include media.mobile {
+			font-size: base.$button-font-size-small;
+			padding-inline: 35px;
+			padding-block: 8px;
+			height: 32px;
+		}
+	}
+}

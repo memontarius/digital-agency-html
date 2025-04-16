@@ -13,6 +13,8 @@
     "vite": "^6.2.0"
   },
   "dependencies": {
+    "embla-carousel": "^8.6.0",
+    "jquery": "^3.7.1",
     "normalize.css": "^8.0.1"
   }
 }

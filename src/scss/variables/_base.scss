@@ -1,0 +1,36 @@
+@use 'colors';
+
+$border: 1px solid var(colors.$accent);
+$border-radius: 16px;
+$border-radius-small: 8px;
+$border-radius-mid: 84px;
+$border-radius-large: 100px;
+$border-radius-extra: 10.5px;
+$border-radius-button: 84px;
+
+$font-family-base: 'Raleway', sans-serif;
+
+$container-width: 1920px;
+$container-padding-x: 70px;
+$container-padding-x-md: 45px;
+$container-padding-x-sm: 24px;
+
+$section-padding-y: 100px;
+$section-padding-y-md: 50px;
+$section-padding-y-sm: 20px;
+
+$input-height: 58px;
+$tag-height: 62px;
+
+$button-height-large: 80px;
+$button-height-mid: 70px;
+$button-height-mid-alt: 56px;
+$button-height-small: 48px;
+$button-height-social: 120px;
+
+$button-font-size: 20px;
+$button-font-size-small: 12px;
+
+$transition-duration: 0.2s;
+
+$subtitle-font-height: 1.77;

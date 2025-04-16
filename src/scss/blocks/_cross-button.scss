@@ -1,0 +1,29 @@
+@use '../mixins';
+@use '../variables/colors';
+
+.cross-button {
+	@include mixins.reset-button;
+	@include mixins.square(54px);
+
+	position: relative;
+
+	&::before,
+	&::after {
+		content: '';
+		position: absolute;
+		top: 50%;
+    left: 12px;
+		width: 50%;
+		height: 2px;
+		background-color: colors.$bg-main;
+		border-radius: 5px;
+	}
+
+	&::before {
+		rotate: 45deg;
+	}
+
+	&::after {
+		rotate: -45deg;
+	}
+}

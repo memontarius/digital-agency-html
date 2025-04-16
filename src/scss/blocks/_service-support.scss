@@ -1,0 +1,42 @@
+@use '../variables/colors';
+@use '../variables/base';
+@use '../mixins';
+@use '../media';
+
+
+.service-support {
+	padding-top: 55px;
+	padding-bottom: 50px;
+	overflow: hidden;
+
+	@include media.mobile {
+		padding-top: 32px;
+		padding-bottom: 20px;
+	}
+
+	&__list {
+		display: flex;
+		column-gap: 20px;
+		position: relative;
+		height: auto;
+		list-style: none;
+	}
+
+	&__item {
+		border: 1px solid colors.$border-item-alt2;
+		border-radius: 100px;
+		padding: 10px 30px;
+		line-height: 40px;
+		justify-content: center;
+		align-items: center;
+		flex-shrink: 0;
+		font-size: 20px;
+		font-weight: 300;
+
+		@include media.mobile {
+			padding-block: 0px;
+			font-size: 15px;
+			line-height: 42px;
+		}
+	}
+}

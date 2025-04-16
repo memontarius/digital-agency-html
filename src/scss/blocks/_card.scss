@@ -1,0 +1,54 @@
+@use '../mixins';
+@use '../media';
+@use '../variables/colors';
+
+.card {
+	display: grid;
+	grid-template-columns: 30% 35% 35%;
+	padding: 40px 0px 40px 70px;
+	gap: 20px;
+
+	@include media.table {
+		grid-template-columns: 25% 75%;
+		padding: 10px 0px 10px 24px;
+		gap: 15px;
+	}
+
+	@include media.mobile {
+		grid-template-columns: 15% 85%;
+		gap: 8px;
+	}
+
+	&__number {
+		color: colors.$text-sub;
+		font-size: 24px;
+		font-weight: 400;
+		@include mixins.fluid-text(24, 18);
+
+		@include media.table {
+			grid-row-start: 1;
+			grid-row-end: 3;
+			padding-left: 30%;
+		}
+	}
+
+	&__title {
+		@include mixins.fluid-text(35, 20);
+		line-height: 1.2;
+		padding-right: 50px;
+		
+		@include media.table {
+			line-height: 24px;
+		}
+	}
+
+	&__description {
+		@include mixins.fluid-text(24, 14);
+		color: colors.$text-sub;
+		line-height: 1.4;
+		
+		@include media.table {
+			line-height: 1.5;
+		}
+	}
+}

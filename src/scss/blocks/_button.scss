@@ -1,0 +1,51 @@
+
+@use "sass:color";
+@use '../variables/base';
+@use '../variables/colors';
+@use '../media';
+@use '../mixins';
+
+.button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	height: base.$button-height-small;
+	padding-inline: 75px;
+	padding-block: 15px;
+	font-size: base.$button-font-size;
+	border: none;
+	color: colors.$text-button;
+	background-color: colors.$bg-button;
+	border-radius: base.$border-radius-button;
+	outline: none;
+	font-weight: 500;
+	line-height: 1;
+
+	&--md {
+		@include mixins.fluid-padding-x(109, 158);
+		padding-block: 27px;
+		font-size: 30px;
+		font-weight: 400;
+	}
+
+	&--lg {
+		@include mixins.fluid-padding-x(109, 169);
+		padding-block: 32px;
+		font-size: 35px;
+		font-weight: 400;
+
+		@include media.table {
+			font-size: 24px;
+			padding-block: 30px;
+		}
+	
+		@include media.mobile {
+			font-size: 16px;
+			padding-block: 12px;
+		}
+	}
+
+	@include media.hover {
+		background-color: color.adjust(colors.$bg-button, $lightness: -10%);
+	}
+}

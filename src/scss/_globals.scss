@@ -1,0 +1,49 @@
+@use 'variables/base';
+@use 'variables/colors';
+@use 'mixins';
+
+
+body {
+	@include mixins.fluid-text(24, 14);
+
+	font-family: base.$font-family-base;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 1.4;
+	color: colors.$text;
+	background-color: colors.$bg-main;
+}
+
+a,
+button,
+input,
+textarea,
+svg * {
+	transition-duration: base.$transition-duration;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+h1, h2, h3, h4 {
+	line-height: 1.2;
+	font-weight: 400;
+}
+
+h1 {
+	@include mixins.fluid-text(100, 40);
+}
+
+h2 {
+	@include mixins.fluid-text(70, 28);
+}
+
+h3 {
+	@include mixins.fluid-text(40, 20);
+}
+
+h4 {
+	@include mixins.fluid-text(35, 14);
+}

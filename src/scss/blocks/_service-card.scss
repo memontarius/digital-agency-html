@@ -1,0 +1,102 @@
+@use '../variables/colors';
+@use '../media';
+@use '../mixins';
+
+
+.service-card {
+	display: flex;
+	padding-top: 40px;
+	padding-bottom: 40px;
+
+	@include media.table {
+		padding-top: 24px;
+	}
+
+	@include media.mobile {
+		padding-top: 16px;
+	}
+
+	&__counter {
+		display: inline-block;
+		padding-inline-start: 4%;
+		margin-right: 12%;
+		height: 100%;
+		color: colors.$text-sub;
+		line-height: 34px;
+		font-size: 24px;
+
+		@include media.table {
+			padding-inline-start: 50px;
+			margin-right: 80px;
+			font-size: 20px;
+			line-height: 24px;
+		}
+
+		@include media.mobile {
+			padding-inline-start: 24px;
+			margin-right: 12px;
+			font-size: 18px;
+			line-height: 22px;
+		}
+	}
+
+	&__title {
+		margin-bottom: 50px;
+		@include mixins.fluid-text(35, 20);
+
+		@include media.table {
+			margin-bottom: 24px;
+		}
+	}
+
+	&__description {
+		font-size: 24px;
+		color: colors.$text-sub;
+		line-height: 1.4;
+		margin-bottom: 50px;
+
+		@include media.table {
+			margin-bottom: 0;
+		}
+	}
+
+	&__content {
+		display: flex;
+		column-gap: 7%;
+		
+		@include media.table {
+			flex-direction: column;
+			row-gap: 24px;
+		}
+	}
+
+	&__preview {
+		flex: 6;
+
+		@include media.table {
+			order: 2;
+		}
+	}
+
+	&__info {
+		display: flex;
+		flex: 4;
+		flex-direction: column;
+
+		@include media.table {
+			order: 1;
+		}
+	}
+
+	&__action-button {
+		align-self: start;
+		padding-inline: 0;
+		width: 80%;
+
+		@include media.table {
+			padding-inline: 0;
+			order: 3;
+			width: 100%;
+		}
+	}
+}

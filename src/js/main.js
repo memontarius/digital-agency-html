@@ -43,9 +43,9 @@ $(window).on('scroll', function () {
 			if (!$(this).hasClass('visible')) {
 				setMarqueeContents(this);
 			}
-			$(this).addClass('visible');  // Можно добавить класс для стилизации
+			$(this).addClass('visible'); 
 		} else {
-			$(this).removeClass('visible');  // Убираем класс, если элемент скрыт
+			$(this).removeClass('visible');
 		}
 	});
 });
@@ -62,16 +62,19 @@ function isElementInViewport(el) {
 }
 
 function setMarqueeContents(marquee) {
-	let windowWidth = $(window).innerWidth(); // Width of the window
-	let textWidth = $(marquee).find('.marquee__content > .marquee__item').outerWidth(); // Width of the text
-	let numberOfCopies = Math.ceil(windowWidth / textWidth) + 1; // enough copies to fill the window plus one
+	let windowWidth = $(window).innerWidth();
 	
-	$(marquee).css('--textWidth', textWidth); // Assign the text width as a CSS variable to compute the animation
+	let contentWidth = $(marquee).find('.marquee__content').outerWidth();
+	let numberOfCopies = Math.ceil(windowWidth / contentWidth) + 1;
+	
+	$(marquee).css('--contentWidth', contentWidth);
 	let marqueCopiedRoot = $(marquee).find('.marquee__copies');
-	marqueCopiedRoot.html(""); // Clear the marquee copies container
+	marqueCopiedRoot.html("");
 
-	for (var i = 0; i < numberOfCopies; i++) { // Fill the copies container with extra copies of the text
-		$(marquee).find('.marquee__content > .marquee__item').clone().appendTo(marqueCopiedRoot);
+	let items = $(marquee).find('.marquee__item');
+
+	for (var i = 0; i < numberOfCopies; i++) {
+		items.clone().appendTo(marqueCopiedRoot);
 	}
 }
 

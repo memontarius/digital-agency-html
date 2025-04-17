@@ -8,8 +8,8 @@
 	padding-left: 0;
 	padding-right: 0;
 	padding-inline: 0;
-	--textWidth: auto;
-	--animSpeed: 70;
+	--contentWidth: auto;
+	--animSpeed: 270;
 	
 	mask-image: linear-gradient(
     to right,
@@ -25,11 +25,11 @@
 		flex-shrink: 0;
 		flex-direction: row;
 		align-items: center;
-		animation: marquee-scroll calc( (var(--textWidth) * 5s) / var(--animSpeed) ) linear infinite;
+		animation: marquee-scroll calc( (var(--contentWidth) * 5s) / var(--animSpeed) ) linear infinite;
 		
 	}
 
-	&__content--reversed {
+	&__content--reversed-anim {
 		animation-direction: reverse;
 	}
 

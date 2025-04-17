@@ -6,6 +6,10 @@
 		padding-top: 66px;
 	}
 
+	@include media.mobile {
+		padding-top: 66px;
+	}
+
 	&__header {
 		margin-bottom: 130px;
 

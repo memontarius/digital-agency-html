@@ -10,7 +10,17 @@
 		}
 	}
 	
+	&__list-wrapper {
+		display: flex;
+		column-gap: 20px;
+
+		@include media.mobile {
+			column-gap: 8px;
+		}
+	}
+
 	&__list {
+		display: flex;
 		column-gap: 20px;
 
 		@include media.mobile {

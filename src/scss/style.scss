@@ -12,6 +12,7 @@
 @use 'blocks/marquee';
 @use 'blocks/position-slider';
 
+@use 'blocks/link';
 @use 'blocks/button';
 @use 'blocks/burger-button';
 @use 'blocks/header';
@@ -21,6 +22,8 @@
 @use 'blocks/banner';
 @use 'blocks/card';
 @use 'blocks/service-card';
+@use 'blocks/common-service-card';
+
 
 @use 'blocks/section';
 @use 'blocks/intro';
@@ -28,3 +31,5 @@
 @use 'blocks/services';
 @use 'blocks/stack-tech';
 @use 'blocks/partnership-stages';
+@use 'blocks/consultation-banner';
+@use 'blocks/common-services';

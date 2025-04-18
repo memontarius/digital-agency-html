@@ -4,38 +4,53 @@ import EmblaCarousel from 'embla-carousel';
 import { addDotBtnsAndClickHandlers } from './addDotBtnsAndClickHandlers';
 import positionSliderHandler from './positionSliderHandler';
 
+
 $(window).ready(function () {
 	$('.marquee').each(function (index) {
 		setMarqueeContents(this);
 	});
 });
 
-$(window).resize(function () {
-	/*
-	$('.marquee').each(function (index) {
-		if ($(this).hasClass('visible')) {
-			setMarqueeContents(this);
-		}
-	});*/
-});
+function createEmblaCarusel(node) {
+	const dotsNode = node.querySelector('.embla__dots');
 
-const emblaNodes = document.querySelectorAll('.embla')
-
-if (emblaNodes) {
-	const options = { loop: false }
-
-	emblaNodes.forEach((node) => {
-		const dotsNode = node.querySelector('.embla__dots')
-		const emblaApi = EmblaCarousel(node, options);
-		
-		const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
-			emblaApi,
-			dotsNode
-		);
-
-		emblaApi.on('destroy', removeDotBtnsAndClickHandlers);
+	const emblaApi = EmblaCarousel(node, {
+		loop: false,
+		align: 'start'
 	});
+
+	const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
+		emblaApi,
+		dotsNode
+	);
+
+	emblaApi.on('destroy', removeDotBtnsAndClickHandlers);
+	return emblaApi;
 }
+
+document.querySelectorAll('.service-card .embla').forEach(createEmblaCarusel);
+
+
+let commonServiceEmblaCarouselNode = document.querySelector('.common-services .embla');
+let commonServiceEmblaCarousel = null;
+
+const rootStyles = getComputedStyle(document.documentElement);
+const breakpointTable = parseFloat(rootStyles.getPropertyValue('--table-breakpoint').trim());
+const breakpointMobile = parseFloat(rootStyles.getPropertyValue('--mobile-breakpoint').trim());
+
+if (window.innerWidth > breakpointMobile) {
+	commonServiceEmblaCarousel = createEmblaCarusel(commonServiceEmblaCarouselNode);
+}
+
+$(window).resize(function () {
+	if (window.innerWidth < breakpointMobile && commonServiceEmblaCarousel != null) {
+		commonServiceEmblaCarousel.destroy();
+		commonServiceEmblaCarousel = null;
+	}
+	else if (window.innerWidth > breakpointMobile && commonServiceEmblaCarousel == null) {
+		commonServiceEmblaCarousel = createEmblaCarusel(commonServiceEmblaCarouselNode)
+	}
+});
 
 $(window).on('scroll', function () {
 	$('.marquee').each(function () {
@@ -43,13 +58,12 @@ $(window).on('scroll', function () {
 			if (!$(this).hasClass('visible')) {
 				setMarqueeContents(this);
 			}
-			$(this).addClass('visible'); 
+			$(this).addClass('visible');
 		} else {
 			$(this).removeClass('visible');
 		}
 	});
 });
-
 
 function isElementInViewport(el) {
 	const rect = el.getBoundingClientRect();
@@ -63,10 +77,10 @@ function isElementInViewport(el) {
 
 function setMarqueeContents(marquee) {
 	let windowWidth = $(window).innerWidth();
-	
+
 	let contentWidth = $(marquee).find('.marquee__content').outerWidth();
 	let numberOfCopies = Math.ceil(windowWidth / contentWidth) + 1;
-	
+
 	$(marquee).css('--contentWidth', contentWidth);
 	let marqueCopiedRoot = $(marquee).find('.marquee__copies');
 	marqueCopiedRoot.html("");

@@ -1,7 +1,14 @@
+@use 'sass:color';
 @use 'variables/base';
 @use 'variables/colors';
 @use 'mixins';
+@use 'media';
 
+
+:root {
+	--table-breakpoint: #{media.$table};
+	--mobile-breakpoint: #{media.$mobile};
+}
 
 body {
 	@include mixins.fluid-text(24, 14);
@@ -46,4 +53,23 @@ h3 {
 
 h4 {
 	@include mixins.fluid-text(35, 14);
+}
+
+p {
+	@include mixins.fluid-text(24, 14);
+}
+
+
+body::-webkit-scrollbar {
+	width: 0.3em;
+}
+
+body::-webkit-scrollbar-track {
+	-webkit-box-shadow: inset 0 0 6px colors.$bg-main;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: color.adjust(colors.$bg-main, $lightness: 10%);
+	outline: 1px solid color.adjust(colors.$bg-main, $lightness: 10%);
+	border-radius: 12px;
 }

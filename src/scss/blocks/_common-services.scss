@@ -1,0 +1,23 @@
+@use '../media';
+
+
+.common-services {
+
+	@include media.mobile {
+		padding-top: 68px;
+	}
+
+	&__header {
+		margin-bottom: 80px;
+	}
+
+	&__sliding-container {
+		display: flex;
+		column-gap: 3%;
+	}
+
+	&__action-block {
+		margin-top: 74px;
+		text-align: center;
+	}
+}

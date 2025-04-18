@@ -1,0 +1,26 @@
+
+.common-service-card {
+	position: relative;
+	overflow: hidden;
+	border-radius: 16px;
+	flex: 0 0 31%;
+	aspect-ratio: 1.13 / 1; 
+	padding: 4%;
+
+	&__title {
+		
+	}
+
+	&__picture {
+		position: absolute;
+		width: 100%;
+		height: auto;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		user-select: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+	}
+}

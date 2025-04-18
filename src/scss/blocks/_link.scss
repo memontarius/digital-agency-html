@@ -1,0 +1,43 @@
+@use "sass:color";
+@use "../variables/colors";
+@use "../mixins";
+@use "../media";
+
+.link {
+	@include mixins.reset-link;
+	display: inline-block;
+
+	&::after {
+		content: "";
+		display: block;
+		border-bottom: 1px solid;
+		height: 5px;
+	}
+
+	&__arrow-icon {
+		display: inline-block;
+		background-color: colors.$text;
+		-webkit-mask-image: url('/assets/icons/arrow.svg');
+		-webkit-mask-repeat: no-repeat;
+		-webkit-mask-size: contain;
+		mask-image: url('/assets/icons/arrow.svg');
+		mask-repeat: no-repeat;
+		mask-size: contain;
+		background-size: cover;
+		background-repeat: no-repeat;
+		width: 0.8em;
+		aspect-ratio: 1 / 1;
+		margin-left: 10px;
+		transition: background-color 0.2s;
+	}
+
+	@include media.hover {
+		color: color.adjust(colors.$text, $lightness: -30%);
+	}
+
+	@include media.hover {
+		.link__arrow-icon {
+			background-color: color.adjust(colors.$text, $lightness: -30%);
+		}
+	}
+}

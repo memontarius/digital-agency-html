@@ -14,18 +14,36 @@ $(window).ready(function () {
 function createEmblaCarusel(node) {
 	const dotsNode = node.querySelector('.embla__dots');
 
-	const emblaApi = EmblaCarousel(node, {
+	const embla = EmblaCarousel(node, {
 		loop: false,
 		align: 'start'
 	});
 
+	const links = node.querySelectorAll('a');
+	embla.on('pointerDown', () => {
+		node.classList.add('is-dragging');
+	
+		// Отключим кликабельность ссылок при перетаскивании
+		links.forEach(link => {
+			link.style.pointerEvents = 'none';
+		});
+	});
+	
+	embla.on('pointerUp', () => {
+		node.classList.remove('is-dragging');
+	
+		links.forEach(link => {
+			link.style.pointerEvents = '';
+		});
+	});
+
 	const removeDotBtnsAndClickHandlers = addDotBtnsAndClickHandlers(
-		emblaApi,
+		embla,
 		dotsNode
 	);
 
-	emblaApi.on('destroy', removeDotBtnsAndClickHandlers);
-	return emblaApi;
+	embla.on('destroy', removeDotBtnsAndClickHandlers);
+	return embla;
 }
 
 document.querySelectorAll('.service-card .embla').forEach(createEmblaCarusel);

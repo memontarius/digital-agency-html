@@ -4,9 +4,9 @@
 @use "../media";
 
 .link {
-	@include mixins.reset-link;
 	display: inline-block;
-
+	@include mixins.reset-link;
+	
 	&::after {
 		content: "";
 		display: block;

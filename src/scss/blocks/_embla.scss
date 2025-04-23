@@ -5,9 +5,10 @@
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
+  //margin-right: calc((2.6rem - 1.4rem) / 2 * -1);
 	margin-top: 50px;
 	column-gap: 16px;
+	width: 100%;
 
 	@include media.table {
 		margin-top: 36px;

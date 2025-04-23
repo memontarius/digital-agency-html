@@ -1,8 +1,9 @@
 import '../scss/style.scss';
 import $ from 'jquery';
 import EmblaCarousel from 'embla-carousel';
-import { addDotBtnsAndClickHandlers } from './addDotBtnsAndClickHandlers';
-import positionSliderHandler from './positionSliderHandler';
+import { addDotBtnsAndClickHandlers } from './AddDotBtnsAndClickHandlers';
+import positionSliderHandler from './PositionSliderHandler';
+import { updateSelectedSnapDisplay } from './EmblaCarouselSelectedSnapDisplay';
 
 
 $(window).ready(function () {
@@ -13,6 +14,7 @@ $(window).ready(function () {
 
 function createEmblaCarusel(node) {
 	const dotsNode = node.querySelector('.embla__dots');
+	const snapDisplayNode = node.querySelector('.embla__selected-snap-display')
 
 	const embla = EmblaCarousel(node, {
 		loop: false,
@@ -22,8 +24,7 @@ function createEmblaCarusel(node) {
 	const links = node.querySelectorAll('a');
 	embla.on('pointerDown', () => {
 		node.classList.add('is-dragging');
-	
-		// Отключим кликабельность ссылок при перетаскивании
+
 		links.forEach(link => {
 			link.style.pointerEvents = 'none';
 		});
@@ -43,6 +44,18 @@ function createEmblaCarusel(node) {
 	);
 
 	embla.on('destroy', removeDotBtnsAndClickHandlers);
+
+	function toggleDotsVisibility() {
+		const canScroll = embla.canScrollNext() || embla.canScrollPrev();
+		dotsNode.style.display = canScroll ? 'flex' : 'none';
+	}
+	
+	embla.on('select', toggleDotsVisibility);
+	embla.on('init', toggleDotsVisibility);
+	embla.on('resize', toggleDotsVisibility);
+
+	updateSelectedSnapDisplay(embla, snapDisplayNode);
+
 	return embla;
 }
 
@@ -51,7 +64,6 @@ document.querySelectorAll('.service-card .embla').forEach(createEmblaCarusel);
 
 let commonServiceEmblaCarouselNode = document.querySelector('.common-services .embla');
 let commonServiceEmblaCarousel = null;
-
 const rootStyles = getComputedStyle(document.documentElement);
 const breakpointTable = parseFloat(rootStyles.getPropertyValue('--table-breakpoint').trim());
 const breakpointMobile = parseFloat(rootStyles.getPropertyValue('--mobile-breakpoint').trim());
@@ -59,6 +71,8 @@ const breakpointMobile = parseFloat(rootStyles.getPropertyValue('--mobile-breakp
 if (window.innerWidth > breakpointMobile) {
 	commonServiceEmblaCarousel = createEmblaCarusel(commonServiceEmblaCarouselNode);
 }
+
+createEmblaCarusel(document.querySelector('.articles .embla'));
 
 $(window).resize(function () {
 	if (window.innerWidth < breakpointMobile && commonServiceEmblaCarousel != null) {
@@ -68,19 +82,6 @@ $(window).resize(function () {
 	else if (window.innerWidth > breakpointMobile && commonServiceEmblaCarousel == null) {
 		commonServiceEmblaCarousel = createEmblaCarusel(commonServiceEmblaCarouselNode)
 	}
-});
-
-$(window).on('scroll', function () {
-	$('.marquee').each(function () {
-		if (isElementInViewport(this)) {
-			if (!$(this).hasClass('visible')) {
-				setMarqueeContents(this);
-			}
-			$(this).addClass('visible');
-		} else {
-			$(this).removeClass('visible');
-		}
-	});
 });
 
 function isElementInViewport(el) {

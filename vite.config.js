@@ -1,4 +1,5 @@
 export default {
+	base: 'digital-agency-site',
 	build: {
 		cssMinify: false,
 		rollupOptions: {

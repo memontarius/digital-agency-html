@@ -1,5 +1,6 @@
 export const addDotBtnsAndClickHandlers = (emblaApi, dotsNode) => {
-  let dotNodes = []
+
+	let dotNodes = []
 
   const addDotBtnsWithClickHandlers = () => {
     dotsNode.innerHTML = emblaApi
@@ -17,11 +18,12 @@ export const addDotBtnsAndClickHandlers = (emblaApi, dotsNode) => {
     })
   }
 
+
   const toggleDotBtnsActive = () => {
-    const previous = emblaApi.previousScrollSnap()
-    const selected = emblaApi.selectedScrollSnap()
-    dotNodes[previous].classList.remove('embla__dot--selected')
-    dotNodes[selected].classList.add('embla__dot--selected')
+    const previous = emblaApi.previousScrollSnap();
+    const selected = emblaApi.selectedScrollSnap();
+    dotNodes[previous].classList.remove('embla__dot--selected');
+    dotNodes[selected].classList.add('embla__dot--selected');
   }
 
   emblaApi
@@ -29,7 +31,7 @@ export const addDotBtnsAndClickHandlers = (emblaApi, dotsNode) => {
     .on('reInit', addDotBtnsWithClickHandlers)
     .on('init', toggleDotBtnsActive)
     .on('reInit', toggleDotBtnsActive)
-    .on('select', toggleDotBtnsActive)
+    .on('select', toggleDotBtnsActive);
 
   return () => {
     dotsNode.innerHTML = ''

@@ -23,7 +23,7 @@
 @use 'blocks/banner';
 @use 'blocks/card';
 @use 'blocks/service-card';
-@use 'blocks/common-service-card';
+@use 'blocks/article-card';
 
 
 @use 'blocks/section';
@@ -34,3 +34,4 @@
 @use 'blocks/partnership-stages';
 @use 'blocks/consultation-banner';
 @use 'blocks/common-services';
+@use 'blocks/articles';

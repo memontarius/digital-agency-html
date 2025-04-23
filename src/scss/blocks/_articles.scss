@@ -1,0 +1,89 @@
+@use '../media';
+@use '../mixins';
+@use '../variables/colors';
+
+
+.articles {
+
+	@include media.mobile {
+		padding-top: 46px;
+	}
+
+	& .article-card {
+		border-radius: 0;
+		height: auto;
+		overflow: visible;
+
+		@include media.mobile {
+			flex: 0 0 auto;
+  		width: 100%;
+		}
+
+		&__title {
+			@include mixins.fluid-text(24, 16);
+			line-height: 1.4;
+			color: colors.$text-sub;
+			margin-top: 50px;
+			margin-bottom: 32px;
+
+			@include media.table {
+				margin-top: 32px;
+				margin-bottom: 16px;
+			}
+		
+			@include media.mobile {
+				margin-top: 16px;
+				margin-bottom: 4px;
+			}
+		}
+
+		&__excerpt {
+			@include mixins.fluid-text(24, 18);
+
+			&:after {
+				content: "";
+				display: inline-block;
+				border-bottom: 1px solid colors.$text;
+				width: 100%;
+				height: 2px;
+			}
+		}
+
+		&__link {
+			display: inline-block;
+			height: auto;
+			padding: 0%;
+		}
+
+		&__picture {
+			position: relative;
+			border-radius: 16px;
+		}
+	}
+
+	&__sliding-container { 
+		display: flex;
+
+		@include media.mobile {
+			margin-top: 40px;
+		}
+	}
+
+	&__action-block {
+		@include media.mobile {
+			margin-top: 33px;
+		}
+	}
+
+	&__slide-indicator {
+		font-size: 16px;
+		line-height: 1.5;
+		color: colors.$text-sub;
+		position: absolute;
+		top: 114px;
+
+		& .snap-current {
+			color: colors.$text;
+		}
+	}
+}

@@ -20,30 +20,9 @@
 	}
 
 	&__sliding-container {
-		display: flex;
-
-		column-gap: 3%;
-
-		@include media.mobile {
-			display: grid;
-			width: 100%;
-			grid-template-columns: 48% 48%;
-			column-gap: 16px;
-			row-gap: 16px;
-		}
-
-		& .common-service-card:first-child {
+		& .article-card:first-child {
 			grid-column-start: 1;
 			grid-column-end: 3;
-		}
-	}
-
-	&__action-block {
-		margin-top: 74px;
-		text-align: center;
-
-		@include media.mobile {
-			margin-top: 0px;
 		}
 	}
 }

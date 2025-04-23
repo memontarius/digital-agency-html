@@ -1,20 +1,23 @@
 @use '../media';
 
 
-.common-service-card {
+.article-card {
 	position: relative;
 	overflow: hidden;
 	border-radius: 16px;
 	flex: 0 0 31%;
-	aspect-ratio: 1.13 / 1; 
+	aspect-ratio: 1.13 / 1;
+
+	@include media.table {
+		flex: 0 0 48.5%;
+	}
 
 	@include media.mobile {
 		aspect-ratio: 1.48 / 1;
 	}
 
-
 	&__link {
-		display: inline-block;
+		display: block;
 		width: 100%;
 		height: 100%;
 		padding: 10%;
